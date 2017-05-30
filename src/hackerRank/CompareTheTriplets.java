@@ -9,20 +9,20 @@ public class CompareTheTriplets {
 
     static int[] solve(int a0, int a1, int a2, int b0, int b1, int b2){
         // Complete this function
-        int aScore = 0;
-        int bScore = 0;
-        if (a0 > b0){
-            aScore = aScore + 1;
-        } else {
-            bScore = bScore + 1;
+        int aRes = 0, bRes = 0;
+        int[] res = new int[2];
+        int[] arrA = {a0, a1, a2};
+        int[] arrB = {b0, b1, b2};
+        for (int i = 0; i < 3; i++){
+            if (arrA[i] > arrB[i]){
+                aRes += 1;
+            } else if (arrA[i] < arrB[i]){
+                bRes += 1;
+            } else {}
         }
-        if (a1 > b1){
-            aScore = aScore + 1;
-        } else {
-            bScore = bScore + 1;
-        }
-        if (a2 > b2)
-        return null;
+        res[0] = aRes;
+        res[1] = bRes;
+        return res;
     }
 
     public static void main(String[] args) {
