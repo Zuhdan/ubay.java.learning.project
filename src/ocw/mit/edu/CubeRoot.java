@@ -10,8 +10,10 @@ class CubeRoot {
     String cubeRoot(int input) {
         String res;
         int tempRes = 0;
+        int iteration = 0;
         for (int i = 0; (i*i*i) <= abs(input) ; i++) {
             tempRes = i;
+            iteration += 1;
         }
         if (input < 0) {
             tempRes = -tempRes;
@@ -19,7 +21,7 @@ class CubeRoot {
         if ((tempRes*tempRes*tempRes) != input) {
             res = "No cubeRoot Exactly same";
         } else {
-            res = "The Cube Root of " + input + " is = " + tempRes;
+            res = "The Cube Root of " + input + " is = " + tempRes + " with Iteration " + iteration;
         }
         return res;
     }
