@@ -5,16 +5,31 @@ package self.practice;
  * Created by captain_n3mo on 05/06/2017.
  */
 class RomawiNumber {
-    private int I = 1;
-    int V = 5;
-    int X = 10;
-
     int convert(String input) {
+        int res = 0;
         char[] input_arr = input.toCharArray();
-        int[] res = new int[input_arr.length];
         for (int i = 0; i < input_arr.length; i++) {
-            res[i] += input_arr[i];
+            switch (input_arr[i]) {
+                case 'X':
+                    if (i > 0 && input_arr[i-1] == 'I') {
+                        res += 9;
+                    } else {
+                        res += 10;
+                    }
+                case 'V':
+                    if (i > 0 && input_arr[i-1] == 'I') {
+                        res += 4;
+                    } else {
+                        res += 5;
+                    }
+                case 'I':
+                    if ( input_arr[+1] == 'V' || input_arr[+1] == 'X' ) {
+                        res += 0;
+                    } else {
+                        res += 1;
+                    }
+            }
         }
-        return I;
+        return res;
     }
 }

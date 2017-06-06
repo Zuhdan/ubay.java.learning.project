@@ -6,6 +6,7 @@ package self.practice;
  */
 public class RunnerSelfPractice {
     public static void main(String[] args) {
-
+        RomawiNumber romawiNumber = new RomawiNumber();
+        System.out.println(romawiNumber.convert("XXXIV"));
     }
 }
