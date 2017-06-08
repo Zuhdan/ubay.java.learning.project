@@ -16,18 +16,21 @@ class RomawiNumber {
                     } else {
                         res += 10;
                     }
+                    break;
                 case 'V':
                     if (i > 0 && input_arr[i-1] == 'I') {
                         res += 4;
                     } else {
                         res += 5;
                     }
+                    break;
                 case 'I':
                     if ( input_arr[+1] == 'V' || input_arr[+1] == 'X' ) {
                         res += 0;
                     } else {
                         res += 1;
                     }
+                    break;
             }
         }
         return res;
